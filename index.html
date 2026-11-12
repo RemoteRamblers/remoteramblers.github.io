@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remote Ramblers | Links + Gear</title>
+<meta name="description" content="Remote Ramblers: our videos, our channels, and every piece of gear we actually use on the bus and the land.">
+<meta property="og:title" content="Remote Ramblers | Links + Gear">
+<meta property="og:description" content="Our videos, our channels, and the gear we actually use.">
+<meta name="theme-color" content="#0E3550">
+<style>
+@font-face { font-family: "Fieldstone"; src: url("fonts/Fieldstone-Heavy.otf") format("opentype"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Fieldstone"; src: url("fonts/Fieldstone-Bold.otf") format("opentype"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Fieldstone"; src: url("fonts/Fieldstone-Medium.otf") format("opentype"); font-weight: 500; font-display: swap; }
+
+:root {
+  --navy: #0E3550;
+  --navy-deep: #0A2940;
+  --blue: #2377A2;
+  --sky: #9BC8DE;
+  --yellow: #FFD45C;
+  --cream: #F5EFE3;
+  --ink: #0E3550;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--navy);
+  background-image: radial-gradient(120% 60% at 50% 0%, #17507A 0%, var(--navy) 60%, var(--navy-deep) 100%);
+  background-attachment: fixed;
+  color: var(--cream);
+  font-family: "Fieldstone", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  line-height: 1.4;
+}
+main { max-width: 520px; margin: 0 auto; padding: 36px 16px 56px; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, summary:focus-visible, input:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+
+header { text-align: center; margin-bottom: 26px; }
+.badge {
+  display: inline-block; padding: 5px 12px; border: 2px solid var(--sky); border-radius: 999px;
+  background: var(--blue); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+}
+h1 {
+  margin: 14px 0 8px; color: var(--yellow); font-weight: 800; font-size: clamp(38px, 12vw, 54px);
+  line-height: .95; letter-spacing: .01em; text-transform: uppercase; text-wrap: balance;
+}
+.tagline { margin: 0 auto; max-width: 30ch; color: var(--sky); font-size: 17px; text-wrap: balance; }
+
+h2 {
+  margin: 34px 0 12px; color: var(--yellow); font-weight: 800; font-size: 22px;
+  text-transform: uppercase; letter-spacing: .04em;
+}
+.sub { margin: -6px 0 14px; color: var(--sky); font-size: 15px; }
+
+/* featured video */
+.feature { display: block; border-radius: 18px; overflow: hidden; background: var(--cream); color: var(--ink); box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.feature .thumb { position: relative; aspect-ratio: 16/9; background: #06202f center/cover no-repeat; }
+.feature .play {
+  position: absolute; inset: 0; margin: auto; width: 64px; height: 64px; border-radius: 50%;
+  background: var(--yellow); display: grid; place-items: center; box-shadow: 0 4px 16px rgba(0,0,0,.4);
+}
+.feature .play::after { content: ""; margin-left: 5px; border-left: 20px solid var(--navy); border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
+.feature .txt { padding: 14px 16px 16px; }
+.feature .label { color: var(--blue); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.feature .title { margin-top: 3px; font-weight: 700; font-size: 19px; line-height: 1.2; text-wrap: balance; }
+
+.promo {
+  display: block; margin-top: 14px; padding: 13px 16px; border-radius: 14px; text-align: center;
+  background: var(--yellow); color: var(--navy); font-weight: 700; font-size: 16px;
+}
+
+/* buttons */
+.btn {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  min-height: 58px; margin-top: 10px; padding: 11px 18px; border-radius: 14px;
+  background: var(--cream); color: var(--ink); font-weight: 700; font-size: 17px;
+  transition: transform .12s ease, background .12s ease;
+}
+.btn small { display: block; font-weight: 500; font-size: 13.5px; color: #3F647C; }
+.btn::after { content: "\2192"; font-size: 20px; color: var(--blue); flex: none; }
+.btn.blue { background: var(--blue); color: #fff; border: 2px solid var(--sky); }
+.btn.blue small { color: #DCEEF6; }
+.btn.blue::after { color: var(--yellow); }
+.btn:hover, .feature:hover, .vid:hover { transform: translateY(-2px); }
+.feature, .vid { transition: transform .12s ease; }
+
+/* more videos */
+.vids { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.vid { border-radius: 12px; overflow: hidden; background: rgba(155,200,222,.14); border: 1px solid rgba(155,200,222,.3); }
+.vid .thumb { aspect-ratio: 16/9; background: #06202f center/cover no-repeat; }
+.vid .title { padding: 8px 10px 10px; font-size: 13.5px; line-height: 1.25; }
+
+/* gear */
+.search {
+  width: 100%; height: 50px; padding: 0 16px; border-radius: 12px; border: 2px solid var(--sky);
+  background: rgba(255,255,255,.08); color: #fff; font: inherit; font-size: 16px;
+}
+.search::placeholder { color: rgba(155,200,222,.85); }
+details { margin-top: 10px; border-radius: 14px; background: rgba(155,200,222,.12); border: 1px solid rgba(155,200,222,.3); overflow: hidden; }
+summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 56px;
+  padding: 10px 16px; cursor: pointer; list-style: none; font-weight: 700; font-size: 17px; color: #fff;
+}
+summary::-webkit-details-marker { display: none; }
+summary .count { margin-left: auto; color: var(--sky); font-weight: 500; font-size: 14px; white-space: nowrap; }
+summary::after { content: "+"; color: var(--yellow); font-size: 24px; line-height: 1; width: 18px; text-align: center; }
+details[open] summary::after { content: "\2212"; }
+.items { margin: 0; padding: 0 8px 8px; list-style: none; }
+.item {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px;
+  margin-top: 6px; padding: 9px 12px; border-radius: 10px; background: var(--cream); color: var(--ink); font-size: 15.5px; font-weight: 700;
+}
+.item small { display: block; font-weight: 500; font-size: 13px; color: #3F647C; }
+.item .go { flex: none; padding: 5px 11px; border-radius: 999px; background: var(--blue); color: #fff; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; }
+.none { display: none; margin: 14px 4px 0; color: var(--sky); }
+
+footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid rgba(155,200,222,.3); color: var(--sky); font-size: 13px; text-align: center; }
+footer p { margin: 0 0 10px; }
+footer a { text-decoration: underline; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="badge">Bus life &rarr; raw land</span>
+    <h1>Remote Ramblers</h1>
+    <p class="tagline" id="tagline"></p>
+  </header>
+
+  <section id="featured"></section>
+
+  <section>
+    <h2>Follow along</h2>
+    <div id="channels"></div>
+    <div class="vids" id="vids"></div>
+  </section>
+
+  <section>
+    <h2>Gear we actually use</h2>
+    <p class="sub">If it's in one of our videos, it's here. Tap a category or search.</p>
+    <div id="shopall"></div>
+    <input class="search" id="search" type="search" placeholder="Search gear (chair, Victron, awning&hellip;)" aria-label="Search gear" style="margin-top:12px">
+    <div id="gear"></div>
+    <p class="none" id="none">Nothing matches that yet. Message us on Instagram and we'll dig up the link.</p>
+  </section>
+
+  <section id="other-wrap">
+    <h2>More from us</h2>
+    <div id="other"></div>
+  </section>
+
+  <footer>
+    <p>Some of these are affiliate links. As an Amazon Associate we earn from qualifying purchases, at no extra cost to you. We only list things we use.</p>
+    <p id="contact"></p>
+  </footer>
+</main>
+
+<script src="links.js"></script>
+<script>
+(function () {
+  var d = window.RR || {};
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function link(cls, url) { var a = el("a", cls); a.href = url; a.target = "_blank"; a.rel = "noopener sponsored"; return a; }
+  function yt(id) { return "https://youtu.be/" + id; }
+  function thumb(id) { var t = el("div", "thumb"); t.style.backgroundImage = "url(https://i.ytimg.com/vi/" + id + "/hqdefault.jpg)"; return t; }
+  function button(item, cls) {
+    var a = link("btn" + (cls ? " " + cls : ""), item.url), s = el("span", null, item.name);
+    if (item.note) s.appendChild(el("small", null, item.note));
+    a.appendChild(s); return a;
+  }
+
+  document.getElementById("tagline").textContent = d.tagline || "";
+
+  var f = document.getElementById("featured");
+  if (d.featured) {
+    var a = link("feature", yt(d.featured.youtubeId)), t = thumb(d.featured.youtubeId), x = el("div", "txt");
+    t.appendChild(el("span", "play"));
+    x.appendChild(el("div", "label", d.featured.label || "Newest video"));
+    x.appendChild(el("div", "title", d.featured.title));
+    a.appendChild(t); a.appendChild(x); f.appendChild(a);
+  }
+  if (d.promo) { var p = link("promo", d.promo.url); p.textContent = d.promo.text; f.appendChild(p); }
+
+  var ch = document.getElementById("channels");
+  (d.channels || []).forEach(function (c, i) { ch.appendChild(button(c, i === 0 ? "blue" : "")); });
+
+  var vids = document.getElementById("vids");
+  (d.moreVideos || []).forEach(function (v) {
+    var a = link("vid", yt(v.youtubeId)); a.appendChild(thumb(v.youtubeId)); a.appendChild(el("div", "title", v.title)); vids.appendChild(a);
+  });
+
+  var sa = document.getElementById("shopall");
+  (d.shopAll || []).forEach(function (s) { sa.appendChild(button(s, "blue")); });
+
+  var gear = document.getElementById("gear");
+  (d.gear || []).forEach(function (g, gi) {
+    var det = el("details"), sum = el("summary", null, g.category), ul = el("ul", "items");
+    sum.appendChild(el("span", "count", g.items.length + " picks"));
+    if (gi === 0) det.open = true;
+    g.items.forEach(function (it) {
+      var li = el("li"), a = link("item", it.url), s = el("span", null, it.name);
+      var sub = [it.brand, it.note].filter(Boolean).join(" · ");
+      if (sub) s.appendChild(el("small", null, sub));
+      a.appendChild(s); a.appendChild(el("span", "go", "Shop"));
+      li.dataset.q = (it.name + " " + (it.brand || "") + " " + g.category).toLowerCase();
+      li.appendChild(a); ul.appendChild(li);
+    });
+    det.appendChild(sum); det.appendChild(ul); gear.appendChild(det);
+  });
+
+  var first = true;
+  document.getElementById("search").addEventListener("input", function (e) {
+    var q = e.target.value.trim().toLowerCase(), any = false;
+    gear.querySelectorAll("details").forEach(function (det, i) {
+      var hits = 0;
+      det.querySelectorAll("li").forEach(function (li) {
+        var ok = !q || li.dataset.q.indexOf(q) !== -1; li.style.display = ok ? "" : "none"; if (ok) hits++;
+      });
+      det.style.display = hits ? "" : "none";
+      det.open = q ? hits > 0 : i === 0;
+      if (hits) any = true;
+    });
+    document.getElementById("none").style.display = any ? "none" : "block";
+  });
+
+  var other = document.getElementById("other");
+  (d.otherProjects || []).forEach(function (o) { other.appendChild(button(o)); });
+  if (!(d.otherProjects || []).length) document.getElementById("other-wrap").style.display = "none";
+
+  if (d.contact) {
+    var c = document.getElementById("contact"), m = el("a", null, d.contact);
+    m.href = "mailto:" + d.contact; c.appendChild(document.createTextNode("Work with us: ")); c.appendChild(m);
+  }
+})();
+</script>
+</body>
+</html>
