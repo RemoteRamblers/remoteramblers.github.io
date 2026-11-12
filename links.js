@@ -100,6 +100,11 @@ window.RR = {
   // Promos for your other channels and projects.
   otherProjects: [
     {
+      name: "Etch and Echo Goods",
+      note: "Our leather goods shop on Etsy",
+      url: "https://etchandechogoods.etsy.com"
+    },
+    {
       name: "Building My Daydream",
       note: "Brandi's channel for women building a business that fits their life",
       url: "https://www.instagram.com/buildingmydaydream/"
