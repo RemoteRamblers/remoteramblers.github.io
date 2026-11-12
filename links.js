@@ -87,6 +87,16 @@ window.RR = {
     }
   ],
 
+  // Newsletter sign-up box. Sign-ups go to the "Remote Ramblers Newsletter" list (#12) in Brevo,
+  // through the Brevo form "Remote Ramblers Newsletter - Link in bio". Set to null to hide the box.
+  newsletter: {
+    heading: "Get our newsletter",
+    blurb: "New episodes and what's really happening on the land, in your inbox.",
+    button: "Sign me up",
+    success: "You're in. Talk soon.",
+    formUrl: "https://8c15e4ec.sibforms.com/serve/MUIFACgz2bji3_NIUYaxU3lii4EgpO4jQT9LEmt54x_Td8jff-fbwmAzdFrAUI9KXgNDZvMwZVtp3whS3dDe6b9vo-V35JJGMr8w_Qo-Uq6WZi1y4ZG9TF8KTF0eDMpdAVRpH3rkjLDEbmWdpPMI6cMmC8MVgcgpsjHmgMQryKry6IntLvs4EGsRJy_DWICPNiiJHMr0KXnMFS3Q6w=="
+  },
+
   // Promos for your other channels and projects.
   otherProjects: [
     {

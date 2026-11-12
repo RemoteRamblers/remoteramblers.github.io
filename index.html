@@ -115,6 +115,24 @@ details[open] summary::after { content: "\2212"; }
 }
 .item small { display: block; font-weight: 500; font-size: 13px; color: #3F647C; }
 .item .go { flex: none; padding: 5px 11px; border-radius: 999px; background: var(--blue); color: #fff; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; }
+/* newsletter */
+.news { margin-top: 34px; padding: 20px 18px 18px; border-radius: 18px; background: var(--blue); border: 2px solid var(--sky); }
+.news h2 { margin: 0 0 6px; }
+.news p { margin: 0 0 14px; color: #fff; font-size: 15.5px; }
+.news label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.news input[type=text], .news input[type=email] {
+  width: 100%; height: 50px; margin-bottom: 10px; padding: 0 14px; border-radius: 12px; border: 0;
+  background: var(--cream); color: var(--ink); font: inherit; font-size: 16px;
+}
+.news .hp { position: absolute; left: -9999px; }
+.news button {
+  width: 100%; height: 52px; border: 0; border-radius: 12px; background: var(--yellow); color: var(--navy);
+  font: inherit; font-weight: 800; font-size: 17px; letter-spacing: .04em; text-transform: uppercase; cursor: pointer;
+}
+.news button:disabled { opacity: .6; cursor: default; }
+.news .msg { margin: 12px 0 0; font-weight: 700; color: var(--yellow); }
+.news .msg:empty { display: none; }
+
 .none { display: none; margin: 14px 4px 0; color: var(--sky); }
 
 footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid rgba(155,200,222,.3); color: var(--sky); font-size: 13px; text-align: center; }
@@ -146,6 +164,21 @@ footer a { text-decoration: underline; }
     <input class="search" id="search" type="search" placeholder="Search gear (chair, Victron, awning&hellip;)" aria-label="Search gear" style="margin-top:12px">
     <div id="gear"></div>
     <p class="none" id="none">Nothing matches that yet. Message us on Instagram and we'll dig up the link.</p>
+  </section>
+
+  <section class="news" id="news" hidden>
+    <h2 id="news-h"></h2>
+    <p id="news-p"></p>
+    <form id="news-form" method="POST" target="_blank" novalidate>
+      <label for="FIRSTNAME">First name</label>
+      <input type="text" id="FIRSTNAME" name="FIRSTNAME" placeholder="First name" maxlength="200" autocomplete="given-name" required>
+      <label for="EMAIL">Email</label>
+      <input type="email" id="EMAIL" name="EMAIL" placeholder="Email address" autocomplete="email" required>
+      <input class="hp" type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="locale" value="en">
+      <button type="submit" id="news-btn"></button>
+      <p class="msg" id="news-msg" role="status"></p>
+    </form>
   </section>
 
   <section id="other-wrap">
@@ -226,6 +259,30 @@ footer a { text-decoration: underline; }
     });
     document.getElementById("none").style.display = any ? "none" : "block";
   });
+
+  var n = d.newsletter;
+  if (n && n.formUrl) {
+    var form = document.getElementById("news-form"), btn = document.getElementById("news-btn"), msg = document.getElementById("news-msg");
+    document.getElementById("news").hidden = false;
+    document.getElementById("news-h").textContent = n.heading;
+    document.getElementById("news-p").textContent = n.blurb;
+    btn.textContent = n.button || "Sign me up";
+    form.action = n.formUrl;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = form.FIRSTNAME.value.trim(), email = form.EMAIL.value.trim();
+      if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = "Add your first name and a valid email."; return; }
+      btn.disabled = true; msg.textContent = "";
+      fetch(n.formUrl + "?isAjax=1", { method: "POST", body: new FormData(form) })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (j && j.success) { form.reset(); msg.textContent = n.success || "You're in. Talk soon."; }
+          else { msg.textContent = "That didn't go through. Check your email address and try again."; }
+        })
+        .catch(function () { msg.textContent = "That didn't go through. Please try again in a minute."; })
+        .then(function () { btn.disabled = false; });
+    });
+  }
 
   var other = document.getElementById("other");
   (d.otherProjects || []).forEach(function (o) { other.appendChild(button(o)); });
