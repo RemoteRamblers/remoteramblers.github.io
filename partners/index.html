@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remote Ramblers | Brand Partnerships</title>
+<meta name="description" content="Work with Remote Ramblers: who we are, who watches, and what we make with brands.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E3550">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../img/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family: "Fieldstone"; src: url("../fonts/Fieldstone-Heavy.otf") format("opentype"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Fieldstone"; src: url("../fonts/Fieldstone-Bold.otf") format("opentype"); font-weight: 700; font-display: swap; }
+
+:root {
+  --navy: #0E3550; --navy-deep: #0A2940; --blue: #2377A2; --sky: #9BC8DE;
+  --yellow: #FFD45C; --cream: #F5EFE3; --ink: #0E3550; --muted: #3F647C;
+  --line: rgba(155,200,222,.3); --panel: rgba(155,200,222,.1);
+  --display: "Fieldstone", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  --body: "Open Sans", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--navy);
+  background-image: radial-gradient(120% 50% at 50% 0%, #17507A 0%, var(--navy) 55%, var(--navy-deep) 100%);
+  background-attachment: fixed; color: var(--cream);
+  font-family: var(--body); font-size: 17px; line-height: 1.55;
+}
+main { max-width: 1040px; margin: 0 auto; padding: 40px 20px 64px; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+p { margin: 0 0 12px; }
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, .big, .badge, .btn, .kind { font-family: var(--display); }
+.badge {
+  display: inline-block; padding: 6px 14px; border: 2px solid var(--sky); border-radius: 999px;
+  background: var(--blue); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+}
+h1 {
+  margin: 16px 0 12px; color: var(--yellow); font-weight: 800; font-size: clamp(40px, 9vw, 84px);
+  line-height: .95; text-transform: uppercase; text-wrap: balance;
+}
+h2 {
+  margin: 0 0 6px; color: var(--yellow); font-weight: 800; font-size: clamp(24px, 4vw, 34px);
+  line-height: 1.05; text-transform: uppercase; letter-spacing: .03em; text-wrap: balance;
+}
+h3 { margin: 0 0 6px; font-weight: 700; font-size: 20px; line-height: 1.15; }
+section { margin-top: 64px; }
+.sub { color: var(--sky); max-width: 62ch; margin-bottom: 22px; }
+.fine { color: var(--sky); font-size: 14px; margin-top: 14px; }
+
+/* hero */
+.hero { display: grid; gap: 28px; align-items: center; }
+.lead { font-size: clamp(18px, 2.2vw, 22px); color: #fff; max-width: 46ch; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 22px;
+  border-radius: 14px; border: 0; cursor: pointer; text-decoration: none;
+  background: var(--yellow); color: var(--navy); font-weight: 800; font-size: 16px; letter-spacing: .05em; text-transform: uppercase;
+  transition: transform .12s ease;
+}
+.btn.ghost { background: transparent; color: #fff; border: 2px solid var(--sky); }
+.btn:hover { transform: translateY(-2px); }
+.photo { border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; background: #06202f center/cover no-repeat; box-shadow: 0 14px 40px rgba(0,0,0,.4); }
+@media (min-width: 860px) { .hero { grid-template-columns: 1.05fr .95fr; } }
+
+/* video player cards */
+.player { position: relative; display: block; width: 100%; padding: 0; border: 0; cursor: pointer; aspect-ratio: 16/9;
+  border-radius: 16px; overflow: hidden; background: #06202f center/cover no-repeat; }
+.player::before { content: ""; position: absolute; inset: 0; margin: auto; width: 68px; height: 68px; border-radius: 50%; background: var(--yellow); box-shadow: 0 4px 18px rgba(0,0,0,.45); }
+.player::after { content: ""; position: absolute; inset: 0; margin: auto; width: 0; height: 0; transform: translateX(4px);
+  border-left: 22px solid var(--navy); border-top: 13px solid transparent; border-bottom: 13px solid transparent; }
+.frame { aspect-ratio: 16/9; border-radius: 16px; overflow: hidden; background: #000; }
+.frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* stats */
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.stat { padding: 18px 16px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
+.stat.top { background: var(--blue); border: 2px solid var(--sky); }
+.big { color: var(--yellow); font-weight: 800; font-size: clamp(30px, 5vw, 44px); line-height: 1; }
+.stat .label { margin-top: 8px; font-weight: 700; color: #fff; }
+.stat .note { font-size: 14px; color: var(--sky); }
+.stat.top { grid-column: span 1; }
+@media (max-width: 699px) { .stat:last-child:nth-child(odd) { grid-column: span 2; } }
+@media (min-width: 700px) { .stats { grid-template-columns: repeat(10, 1fr); } .stat { grid-column: span 2; } .stat.top { grid-column: span 5; } }
+
+/* generic card grids */
+.grid { display: grid; gap: 14px; }
+@media (min-width: 700px) { .grid.two { grid-template-columns: 1fr 1fr; } .grid.three { grid-template-columns: repeat(3, 1fr); } .grid.four { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 980px) { .grid.four { grid-template-columns: repeat(4, 1fr); } }
+.card { padding: 20px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
+.card p { color: #E4EEF4; font-size: 16px; margin: 0; }
+.card.light { background: var(--cream); color: var(--ink); border: 0; }
+.card.light p { color: var(--ink); }
+.card.light h3 { color: var(--ink); }
+
+/* work */
+.work { display: grid; gap: 16px; }
+@media (min-width: 700px) { .work { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 980px) { .work { grid-template-columns: repeat(3, 1fr); } }
+.kind { display: inline-block; margin: 10px 0 2px; color: var(--sky); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.work .title { font-weight: 600; line-height: 1.3; }
+
+/* cases */
+.case .logo { height: 34px; display: flex; align-items: center; margin-bottom: 14px; }
+.case .logo img { max-height: 34px; max-width: 170px; width: auto; }
+.case dl { margin: 14px 0 0; }
+.case dt { font-family: var(--display); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin-top: 10px; }
+.case dd { margin: 2px 0 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.chip { padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); font-weight: 600; font-size: 15px; }
+
+/* upcoming */
+.up { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.up li { display: grid; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.up .t { font-weight: 700; color: #fff; font-size: 18px; }
+.up .f { color: var(--sky); font-size: 15px; }
+@media (min-width: 760px) { .up li { grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: baseline; } }
+
+/* contact */
+.contact { padding: 34px 24px; border-radius: 22px; background: var(--blue); border: 2px solid var(--sky); text-align: center; }
+.contact p { color: #fff; max-width: 52ch; margin: 8px auto 20px; }
+.contact .cta { justify-content: center; margin-top: 0; }
+
+/* draft placeholders: only shown with ?draft=1 or on a local preview */
+.todo { display: none; }
+.draft .todo {
+  display: grid; place-items: center; text-align: center; padding: 18px; border-radius: 14px;
+  border: 2px dashed var(--yellow); color: var(--yellow); background: rgba(255,212,92,.07);
+  font-family: var(--body); font-weight: 600; font-size: 15px; line-height: 1.35;
+}
+.draft .todo.video { aspect-ratio: 16/9; }
+.draft .todo.inline { display: block; margin-top: 10px; padding: 10px 12px; text-align: left; }
+.draftbar { display: none; }
+.draft .draftbar { display: block; position: sticky; top: 0; z-index: 5; padding: 9px 16px; background: var(--yellow); color: var(--navy); font-weight: 700; font-size: 14px; text-align: center; }
+
+footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--sky); font-size: 14px; text-align: center; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<div class="draftbar">Draft view. Yellow dashed boxes are waiting on you and are hidden from brands.</div>
+<main>
+  <header class="hero">
+    <div>
+      <span class="badge">Brand partnerships</span>
+      <h1>Remote Ramblers</h1>
+      <p class="lead" id="lead"></p>
+      <div class="cta" id="cta-top"></div>
+    </div>
+    <div id="hero-media"></div>
+  </header>
+
+  <section aria-labelledby="h-num">
+    <h2 id="h-num">The numbers</h2>
+    <p class="sub" id="asof"></p>
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <section aria-labelledby="h-aud">
+    <h2 id="h-aud">Who's watching</h2>
+    <p class="sub">People planning a bus, a van, a cabin or a piece of land of their own, who watch to see what it takes.</p>
+    <div class="grid four" id="audience"></div>
+    <p class="fine" id="audnote"></p>
+  </section>
+
+  <section aria-labelledby="h-angle">
+    <h2 id="h-angle">Stories we tell well</h2>
+    <p class="sub">Four things our viewers come back for.</p>
+    <div class="grid four" id="angles"></div>
+  </section>
+
+  <section aria-labelledby="h-offer">
+    <h2 id="h-offer">What we make with brands</h2>
+    <p class="sub">We shoot, edit and publish everything ourselves. One shoot can cover several of these.</p>
+    <div class="grid two" id="offers"></div>
+  </section>
+
+  <section aria-labelledby="h-work">
+    <h2 id="h-work">Our work</h2>
+    <p class="sub">Tap any video to play it here.</p>
+    <div class="work" id="work"></div>
+  </section>
+
+  <section aria-labelledby="h-case">
+    <h2 id="h-case">Brands we've worked with</h2>
+    <p class="sub">A few recent partnerships, and what we made.</p>
+    <div class="grid three" id="cases"></div>
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <section aria-labelledby="h-up">
+    <h2 id="h-up">What we're filming next</h2>
+    <p class="sub">The land series runs all winter. Here's where a product could do real work on camera.</p>
+    <ul class="up" id="upcoming"></ul>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How we work</h2>
+    <div class="grid three" id="promises" style="margin-top:18px"></div>
+  </section>
+
+  <section class="contact" aria-labelledby="h-contact">
+    <h2 id="h-contact">Let's make something</h2>
+    <p>Tell us what you make and what you'd like to see. We'll come back with an idea, a date and a rate.</p>
+    <div class="cta" id="cta-bottom"></div>
+  </section>
+
+  <footer>
+    <p>Brandi &amp; Ben &middot; Remote Ramblers &middot; <a href="https://www.remoteramblers.com/">remoteramblers.com</a></p>
+  </footer>
+</main>
+
+<script src="partners.js"></script>
+<script>
+(function () {
+  var d = window.RRP || {};
+  // Draft view: ?draft=1, or any local preview. Add ?live=1 locally to see exactly what brands see.
+  var draft = (/[?&]draft=1/.test(location.search) || /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) && !/[?&]live=1/.test(location.search);
+  if (draft) document.body.classList.add("draft");
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function $(id) { return document.getElementById(id); }
+  function todo(text, cls) { return el("div", "todo" + (cls ? " " + cls : ""), "To fill in: " + text); }
+
+  function player(id, title) {
+    var b = el("button", "player");
+    b.type = "button";
+    b.setAttribute("aria-label", "Play video: " + title);
+    b.style.backgroundImage = "url(https://i.ytimg.com/vi/" + id + "/hqdefault.jpg)";
+    b.addEventListener("click", function () {
+      var f = el("div", "frame"), i = document.createElement("iframe");
+      i.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+      i.title = title; i.allow = "autoplay; encrypted-media; picture-in-picture"; i.allowFullscreen = true;
+      f.appendChild(i); b.replaceWith(f);
+    });
+    return b;
+  }
+
+  function cta(target) {
+    var m = el("a", "btn", "Email us"); m.href = "mailto:" + d.contact + "?subject=" + encodeURIComponent("Partnership with Remote Ramblers");
+    target.appendChild(m);
+    if (d.kitPdf) { var k = el("a", "btn ghost", "Download media kit"); k.href = d.kitPdf; k.target = "_blank"; k.rel = "noopener"; target.appendChild(k); }
+    else if (target.id === "cta-top") { var t = todo("media kit PDF (kitPdf in partners.js)"); t.style.minHeight = "52px"; target.appendChild(t); }
+  }
+
+  $("lead").textContent = d.lead || "";
+  cta($("cta-top")); cta($("cta-bottom"));
+
+  var hm = $("hero-media");
+  if (d.heroPhoto) { var ph = el("div", "photo"); ph.style.backgroundImage = "url(" + d.heroPhoto + ")"; ph.setAttribute("role", "img"); ph.setAttribute("aria-label", "Brandi and Ben on the land with the bus"); hm.appendChild(ph); }
+  else if (d.heroVideo) { hm.appendChild(player(d.heroVideo.youtubeId, d.heroVideo.title)); hm.appendChild(todo("a current photo of you two on the land (heroPhoto). The video above shows until then.", "inline")); }
+
+  $("asof").textContent = "As of " + d.asOf + ".";
+  (d.stats || []).forEach(function (s, i) {
+    var c = el("div", "stat" + (i < 2 ? " top" : ""));
+    c.appendChild(el("div", "big", s.big)); c.appendChild(el("div", "label", s.label));
+    if (s.note) c.appendChild(el("div", "note", s.note));
+    $("stats").appendChild(c);
+  });
+
+  (d.audience || []).forEach(function (a) {
+    var c = el("div", "card"); c.appendChild(el("div", "big", a.big)); var p = el("p", null, a.text); p.style.marginTop = "10px"; c.appendChild(p); $("audience").appendChild(c);
+  });
+  $("audnote").textContent = d.audienceNote || "";
+
+  (d.angles || []).forEach(function (o) {
+    var c = el("div", "card"); var h = el("h3", null, o.name); h.style.color = "var(--yellow)"; c.appendChild(h); c.appendChild(el("p", null, o.text)); $("angles").appendChild(c);
+  });
+
+  (d.offers || []).forEach(function (o) {
+    var c = el("div", "card"); var h = el("h3", null, o.name); h.style.color = "#fff"; c.appendChild(h); c.appendChild(el("p", null, o.text)); $("offers").appendChild(c);
+  });
+
+  (d.work || []).forEach(function (w) {
+    var c = el("div");
+    if (w.youtubeId) { c.appendChild(player(w.youtubeId, w.title)); c.appendChild(el("span", "kind", w.kind)); c.appendChild(el("div", "title", w.title)); }
+    else if (draft) { c.appendChild(todo(w.todo || w.title, "video")); c.appendChild(el("span", "kind", w.kind)); c.appendChild(el("div", "title", w.title)); }
+    else return;
+    $("work").appendChild(c);
+  });
+
+  (d.cases || []).forEach(function (k) {
+    var c = el("div", "card light case"), lg = el("div", "logo");
+    if (k.logo) { var im = document.createElement("img"); im.src = k.logo; im.alt = k.brand; lg.appendChild(im); } else lg.appendChild(el("h3", null, k.brand));
+    c.appendChild(lg); c.appendChild(el("p", null, k.story));
+    var dl = el("dl");
+    [["What we made", k.delivered], ["What happened", k.result], ["Numbers", k.numbers]].forEach(function (r) {
+      if (r[1]) { dl.appendChild(el("dt", null, r[0])); dl.appendChild(el("dd", null, r[1])); }
+    });
+    c.appendChild(dl);
+    if (k.todo && (!k.delivered || !k.result || !k.numbers)) { var t = todo(k.todo, "inline"); t.style.color = "#8A5A00"; t.style.borderColor = "#C98A00"; c.appendChild(t); }
+    $("cases").appendChild(c);
+  });
+  (d.alsoWorkedWith || []).forEach(function (n) { $("chips").appendChild(el("span", "chip", n)); });
+
+  (d.upcoming || []).forEach(function (u) {
+    var li = el("li"); li.appendChild(el("span", "t", u.title)); li.appendChild(el("span", "f", "Good fit: " + u.fit)); $("upcoming").appendChild(li);
+  });
+
+  (d.promises || []).forEach(function (p) {
+    var c = el("div", "card"); var h = el("h3", null, p.name); h.style.color = "var(--yellow)"; c.appendChild(h); c.appendChild(el("p", null, p.text)); $("promises").appendChild(c);
+  });
+})();
+</script>
+</body>
+</html>
